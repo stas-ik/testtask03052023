@@ -1,6 +1,6 @@
 <?php
 
-function link_to(array $params)
+function link_to(array $params): string
 {
     $link_type = isset($params['type']) ? strtolower($params['type']) : 'default';
 
@@ -29,24 +29,23 @@ function link_to(array $params)
             $href_prefix = '';
 
     }
-    echo sprintf('<a href="%s%s">%s</a>', $href_prefix, $href, $content);
+    return sprintf('<a href="%s%s">%s</a>', $href_prefix, $href, $content);
 }
 
-link_to([
+echo link_to([
     'type' => 'default',
     'content' => 'Link',
     'href' => 'http://example.com',
-] );
-echo '<br>';
-link_to([
+] ).'<br>';
+
+echo link_to([
     'type' => 'email',
-    'content' => 'johndoeexample.com',
-]);
-echo '<br>';
-link_to([
+    'content' => 'johndoe@example.com',
+]).'<br>';
+
+echo link_to([
     'type' => 'tel',
     'content' => '+38 123 456 78 90',
-]);
-echo '<br>';
+]).'<br>';
 
 ?>
