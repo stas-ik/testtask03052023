@@ -31,21 +31,33 @@ function link_to(array $params): string
     }
     return sprintf('<a href="%s%s">%s</a>', $href_prefix, $href, $content);
 }
-
-echo link_to([
-    'type' => 'default',
-    'content' => 'Link',
-    'href' => 'http://example.com',
-] ).'<br>';
-
-echo link_to([
-    'type' => 'email',
-    'content' => 'johndoe@example.com',
-]).'<br>';
-
-echo link_to([
-    'type' => 'tel',
-    'content' => '+38 123 456 78 90',
-]).'<br>';
-
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task 1</title>
+</head>
+<body>
+
+    <?php
+        echo link_to([
+                'type' => 'default',
+                'content' => 'Link',
+                'href' => 'http://example.com',
+            ] ).'<br>';
+
+        echo link_to([
+                'type' => 'email',
+                'content' => 'johndoe@example.com',
+            ]).'<br>';
+
+        echo link_to([
+                'type' => 'tel',
+                'content' => '+38 123 456 78 90',
+            ]).'<br>';
+    ?>
+</body>
+</html>
